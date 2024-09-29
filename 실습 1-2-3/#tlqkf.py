@@ -1,1 +1,1 @@
-#tlqkf
+print('와우')
