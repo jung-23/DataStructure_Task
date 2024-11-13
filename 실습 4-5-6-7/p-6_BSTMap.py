@@ -50,49 +50,34 @@ class BSTMap():
         self.root = delete_bst (self.root, key)
 
     def display(self, Order , msg = 'BTSMap :'):
+        print(msg, end='')
         if Order == 1:
-            print(msg, end='')
             inorder(self.root)
-            print()
         if Order == 2:
-            print(msg, end='')
             preorder(self.root)
-            print()
         if Order == 3:
-            print(msg, end='')
             postorder(self.root)
-            print()
+        print()
 
 
-
-#=========================================================
-#   - 이 파일이 직접 실행될 때에는 다음 문장들을 실행함.
-#   - 다른 파일에서 모듈로 불려지는 경우는 실행되지 않음.
-#=========================================================
-# 코드 9.12: 이진탐색트리를 이용한 맵 테스트 프로그램
 if __name__ == "__main__":
     data = [35, 18, 7, 26, 12, 3, 68, 22, 30, 99]
-    value= ["삼오", "일팔", "영칠", "이육", "일이", "영삼", "육팔", "이이", "삼영", "구구"]
+    text = ['inorder','preorder','postorder']
 
-    map_in = BSTMap()
-    map_in.display("[삽입 전] : ")
+    while(True):
+        print('*'*50)
+        order = input("[1]inorder [2]preorder [3]postorder [4]end\n-->")
 
-    print("order 1 : inorder")
-    for i in range(len(data)) :
-        map_in.insert(data[i],value[i])
-        map_in.display(1,"[삽입 %2d] : "%data[i])
-    
-    map_pre = BSTMap()
-    map_pre.display("[삽입 전] : ")
+        if order == '4':
+            break
+        elif int(order)>=5:
+            #print('*'*50)
+            print('\nMessege:선택지에서 다시 골라주세요')
+            continue
 
-    print("order 2 : preorder")
-    for i in range(len(data)) :
-        map_pre.insert(data[i],value[i])
-        map_pre.display(2,"[삽입 %2d] : "%data[i])
-
-    map_post = BSTMap()
-    map_post.display("[삽입 전] : ")
-    print("order 3 : postorder")
-    for i in range(len(data)) :
-        map_post.insert(data[i],value[i])
-        map_post.display(3,"[삽입 %2d] : "%data[i])
+        map_in = BSTMap()
+        print("\norder %s : %s"%(order,text[int(order)-1]))
+        for i in range(len(data)) :
+            map_in.insert(data[i])
+            map_in.display(int(order),"[삽입 %2d] : "%data[i])
+        print()
