@@ -330,10 +330,10 @@ def radix_sort(A):
 
     return total_cp, total_mv, A
 
-#5, 8, 1, 3, 4
+#5,8,1,3,4
 while(1):
     try: # 사용자로부터 데이터를 입력받아 리스트로 변환
-        data = list(map(int, input("\n* Please input a data list : ").split(', ')))
+        data = list(map(int, input("\n* Please input a data list : ").split(',')))
         break
     except ValueError:
         print("\nPlease Input Again")
